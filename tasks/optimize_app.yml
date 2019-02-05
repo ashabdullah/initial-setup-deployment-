@@ -1,0 +1,35 @@
+---
+
+- name: Install composer deps
+  composer:
+    command: update
+    working_dir: "{{ new_release_dir }}"
+    prefer_dist: true
+    optimize_autoloader: true
+    no_dev: true
+    no_scripts: true
+
+- name: php artisan clear-compiled
+  shell: php artisan clear-compiled
+  args:
+    chdir: "{{ new_release_dir }}"
+
+- name: php artisan config:clear
+  shell: php artisan config:clear
+  args:
+    chdir: "{{ new_release_dir }}"
+
+- name: php artisan cache:clear
+  shell: php artisan cache:clear
+  args:
+    chdir: "{{ new_release_dir }}"
+
+- name: php artisan view:clear
+  shell: php artisan view:clear
+  args:
+    chdir: "{{ new_release_dir }}"
+
+- name: php artisan config:cache
+  shell: php artisan config:cache
+  args:
+    chdir: "{{ new_release_dir }}"

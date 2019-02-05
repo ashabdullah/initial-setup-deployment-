@@ -1,0 +1,109 @@
+---
+
+# Name of user which will be created on server
+user: ansible
+
+# User password
+password: $6$7816Yjzd$.arOT.b6EQPcJLK6J2oxK697k4nBey/8G5DIz6o7j7YlJLpJy.zpru9S/YUIoSgmwMPO4dJjXC57vj/xuNRhJ/
+
+# Public key to copy to remote server
+public_key: ~/.ssh/id_rsa.pub
+
+# Email to which letsencrypt will send notifications
+email: ash.abdullah@scientificgames.com
+
+# Timezone to set on server
+timezone: 'America/New_York'
+
+# Domain of your site
+domain: wallet.sciplay.com
+
+# Where site will be located
+domain_path: "/var/www/{{ domain }}"
+
+# Where releases will be located
+releases_dir: "{{ domain_path }}/releases"
+
+# Where link to current release will be located
+current_dir: "{{ domain_path }}/current"
+
+# Where directory with persistent data will be located
+persistent_dir: "{{ domain_path }}/persistent"
+
+# Link to your git repository of your site
+repo_url: http://wallet-access:pR1TCJYwVPaEHYcKaPB5@sciplay-git.gamelogic.com/eos/eos-wallet.git
+#repo_url: http://checkprocessor-access:zzzbqgFHywi516dnHzjB@sciplay-git.gamelogic.com/eos/check-processor.git
+
+# Run migrations
+migrate: true
+
+# Command to run migrations
+# Alternatives: php artisan migrate:refresh --seed
+migrate_command: php artisan migrate --force
+
+# Command to rollback migrations
+migrate_rollback_command: php artisan migrate:rollback --force
+
+# Validate your .env file
+# melihovv/laravel-env-validator should be installed in your project
+validate_env: false
+
+# Backup database before migration
+# spatie/laravel-backup should be installed in your project
+backup_db: false
+
+# Copy node_modules folder from latest release.
+copy_node_modules: true
+
+# Copy vendor folder from latest release.
+copy_vendor: true
+
+# Extra args passed to certbot for certificate generation. Remove `--test-cert`
+certbot_extra_args: --standalone --no-eff-email -n --agree-tos --keep --expand  --preferred-challenges tls-sni --test-cert
+
+# What to do after certificate was refreshed?
+renew_hook: systemctl reload nginx
+
+# Swap file size (see https://github.com/kamaln7/ansible-swapfile)
+swapfile_size: 1GB
+
+# Which npm packages install globally
+nodejs_npm_global_packages:
+  - name: yarn
+
+mysql_user_name: root
+mysql_user_password: root
+
+# Mysql user name and password
+# More info at https://github.com/geerlingguy/ansible-role-mysql
+mysql_user_name: root
+mysql_user_password: root
+
+# Mysql root user name and password
+#mysql_root_username: root
+#mysql_root_password: root
+
+# Databases to create in mysql.
+# mysql_databases: []
+#   - name: example
+#     collation: utf8mb4_unicode_ci
+#     encoding: utf8mb4
+#     replicate: 1
+
+# Users to create in mysql.
+# mysql_users: []
+#   - name: example
+#     host: 127.0.0.1
+#     password: secret
+#     priv: *.*:USAGE
+# mysql_root_password: root
+
+mysql_databases:
+  - name: walletdb
+    encoding: latin1
+    collation: latin1_general_ci
+mysql_users:
+  - name: root
+    host: "127.0.0.1"
+    password: root
+    #priv: "walletdb.*:ALL"

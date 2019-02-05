@@ -1,0 +1,84 @@
+---
+users:
+  - username: youx
+    password: $6$YHjGoyQr.c$airNDYKi7V/xTZ.SFKb3WS5Ylk1Eols57Q/zm8k27MJumvkpLereyFlkAuKR4xJq9JZxnUHkAa7J2mano3tRc1
+    update_password: on_create
+    comment: Ops User
+    shell: /bin/bash
+    ssh_key: |
+      #ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx8crAHG/a9QBD4zO0ZHIjdRXy+ySKviXVCMIJ3/NMIAAzDyIsPKToUJmIApHHHF1/hBllqzBSkPEMwgFbXjyqTeVPHF8V0iq41n0kgbulJG 
+    #exclusive_ssh_key: yes
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    groups: admin 
+    append: yes
+    servers:
+      - web
+      
+
+  - username: lmorris
+    password: $6$Aqb.S75rUxyeeEM$1UjTOBJ5roUnPqXK/EbSe1et8oiZSZhd8jKgR9L0QFCmj8hLoy0KiCfiymthZttgEFTnJEESt7dEuIbTFcw/Y.
+    #ssh_key: AAAAB3NzaC1yc2EAAAADAQABAAACAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx8crAHG/a9QBD4zO0ZHIjdRXy+ySKviXVCMIxxxxxxxxxxxxxxxxxxJmIApHHHF1/hBllqbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbulJG 
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    servers:
+      - web
+      
+
+  - username: bgibbins
+    password: $6$Aqb.S75rUxyeeEM$1UjTOBJ5roUnPqXK/EbSe1et8oiZSZhd8jKgR9L0QFCmj8hLoy0KiCfiymthZttgEFTnJEESt7dEuIbTFcw/Y.
+    #ssh_key: AAAAB3NzaC1yc2EAAAADAQABAAACAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx8crAHG/a9QBD4zO0ZHIjdRXy+ySKviXVCMIxxxxxxxxxxxxxxxxxxJmIApHHHF1/hBllqbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbulJG 
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    servers:
+      - web
+
+
+  - username: klader
+    password: $6$Aqb.S75rUxyeeEM$1UjTOBJ5roUnPqXK/EbSe1et8oiZSZhd8jKgR9L0QFCmj8hLoy0KiCfiymthZttgEFTnJEESt7dEuIbTFcw/Y.
+    #ssh_key: AAAAB3NzaC1yc2EAAAADAQABAAACAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx8crAHG/a9QBD4zO0ZHIjdRXy+ySKviXVCMIxxxxxxxxxxxxxxxxxxJmIApHHHF1/hBllqbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbulJG 
+    use_sudo: yes
+    user_state: present
+    servers:
+      - web
+      
+
+
+  - username: aalbin
+    password: $6$CUSvkF4E$i8zW9V6YXe6tlgliy3HqxRWodD/YRtUXPN/p/Hs2du7SEXuypwg7U8KWWytLNY3tYxpbkbrO7rZmDyVbiH.9n.
+    #ssh_key: 
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    servers:
+      - web
+
+  - username: edhovey
+    password: $6$CUSvkF4E$i8zW9V6YXe6tlgliy3HqxRWodD/YRtUXPN/p/Hs2du7SEXuypwg7U8KWWytLNY3tYxpbkbrO7rZmDyVbiH.9n.
+    #ssh_key:
+    use_sudo: no
+    user_state: present
+    servers:
+      - web
+
+
+  - username: sboyapati
+    password: $6$CUSvkF4E$i8zW9V6YXe6tlgliy3HqxRWodD/YRtUXPN/p/Hs2du7SEXuypwg7U8KWWytLNY3tYxpbkbrO7rZmDyVbiH.9n.
+    #ssh_key:
+    use_sudo: no
+    user_state: present
+    servers:
+      - web
+
+  - username: gopi
+    password: $6$Aqb.S75rUxyeeEM$1UjTOBJ5roUnPqXK/EbSe1et8oiZSZhd8jKgR9L0QFCmj8hLoy0KiCfiymthZttgEFTnJEESt7dEuIbTFcw/Y.
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    servers:
+      - web
+
+

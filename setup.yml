@@ -1,0 +1,62 @@
+---
+
+- hosts: all
+  remote_user: "{{ user }}"
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - name: essentials
+      tags: essentials
+
+    - name: timezone
+      tags: timezone
+
+    - name: iptables
+      tags: iptables
+
+    - name: fail2ban
+      tags: fail2ban
+
+    - name: new.swapfile
+      tags: swapfile
+      become: true
+
+    #- name: certbot
+    #  tags: ssl
+
+    #- name: ssl
+    #  tags: ssl
+
+    - name: new.nodejs
+      tags: nodejs
+      become: true
+
+    #- name: nginx
+    #  tags: nginx
+    #  become: true
+
+    - name: new.php-versions
+      tags: php
+      become: true
+
+    - name: new.php
+      tags: php
+      become: true
+    
+    - name: new.composer
+      tags: composer
+      become: true
+
+    - name: mysql.build
+      tags: mysql
+      become: true
+
+    - name: new.apache
+      tags: apache
+      become: true
+
+  tasks:
+    - include: tasks/setup_deploy_folder_structure.yml
+      tags: setup_deploy
