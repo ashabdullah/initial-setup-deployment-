@@ -31,8 +31,7 @@ current_dir: "{{ domain_path }}/current"
 persistent_dir: "{{ domain_path }}/persistent"
 
 # Link to your git repository of your site
-repo_url: http://wallet-access:pR1TCJYwVPaEHYcKaPB5@sciplay-git.gamelogic.com/eos/eos-wallet.git
-#repo_url: http://checkprocessor-access:zzzbqgFHywi516dnHzjB@sciplay-git.gamelogic.com/eos/check-processor.git
+#repo_url:
 
 # Run migrations
 migrate: true
